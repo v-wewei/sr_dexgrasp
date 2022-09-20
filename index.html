@@ -1,1 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Hand-Object Contact Consistency Reasoning for Human Grasps Generation">
+    <meta name="author" content="Hanwen Jiang, Shaowei Liu, Jiashun Wang, Xiaolong Wang">
+
+    <title>
+        Hand-Object Contact Consistency Reasoning for Human Grasps Generation
+    </title>
+    <script type="text/javascript">
+        function changeCheckType(){
+            var categories = ['01_spray_bottle', '02_lotion_bottle', '03_squeezable_bottle', '04_key', '10_mug', '11_cup', '12_bowl', '13_teapot', '14_wineglass', '15_cylinder_bottle', '16_s_bottle', '17_can', '20_knife', '21_screwdriver', '22_hammer', '23_flashlight', '24_wrench', '25_toothbrush', '26_pan', '27_drill', '28_lightbulb', '29_pen', '35_scissors', '36_plier', '37_stapler', '40_eyeglass', '41_headphone', '42_binoculars', '43_gamecontroller', '50_camera', '51_mouse', '52_phone', '53_spoon', '54_spatula', '55_fork', '56_door_knob', '57_toothpaste', '58_clamp', '59_detergent_bottle']
+            for (var i=0;i<3;i++)
+            { 
+                for (var j=0;j<4;j++)
+                { 
+                    var my_img = document.getElementById("img_"+ i.toString() + j.toString());
+                    var ct = document.getElementById("checkType");
+                    var index = ct.selectedIndex;
+                    var val = ct.options[index].value;
+                    my_img.src = "saved_gif/" + categories[val] + "/" + (i * 4 + j).toString() + ".gif"
+                }
+            }
+            // var my_img = document.getElementById("my_gif");
+            // var ct = document.getElementById("checkType");
+            // var index = ct.selectedIndex;
+            // var val = ct.options[index].value;
+            // my_img.src = "saved_gif/" + categories[val] + "/0.gif"
+        }
+    </script>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="my_css.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>XXXXXXXXXXXX</h2>
+    <hr>
+    <p class="authors">
+        <!-- <a href="https://hwjiang1510.github.io/">Wei Wei</a>,&emsp; -->
+        <a>Wei Wei</a>,&emsp;
+        <a>Peng Wang</a>
+    </p>
+    <!-- <h5>ICCV 2021 (Oral)</h5> -->
+    <!-- <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" style="background-color: #0793f0" href="https://arxiv.org/pdf/2104.03304.pdf">Paper</a>
+        <a class="btn btn-primary" style="background-color: #4da9fa" href="https://github.com/hwjiang1510/GraspTTA">Code</a>
+        <a class="btn btn-primary" style="background-color: #0793f0" href="./sources/slides.pdf">Slides</a>
+    </div> -->
+</div>
+
+<div class="container">
+    <!-- <div class="section">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="./sources/teaser-min.gif" style="width:100%">
+            </div>
+        </div>
+        <hr>
+    </div> -->
+
+
+
+<!-- Introduction -->
+<div class="section">
+    <h2>Demo</h2>
+    <hr>
+    <p>
+        XXXXXXXXXXXX.
+    </p>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+        <div class="col-sm-3">
+            <img src="./gt_ho_18-min.gif" style="width:95%">
+        </div>
+
+    </div>
+
+    </div>
+</div>
+<!--  -->
+<div class="section">
+    <hr>
+    <p>
+        XXXXXXXXXXXX <hr>
+    </p>
+</div>
+<!-- Idea -->
+    <div class="section">
+        <h2>Idea</h2>
+        <hr>
+        <p>
+            XXXXXXXXXXXX.
+        </p>
+        <div class="row align-items-center">
+            <div class="col-sm-3 text-center">
+                <h4>Human</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Contact Map</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Shadow Hand</h4>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%">
+            </div>
+
+        </div>
+    </div>
+    <!--  -->
+
+    <div class="section">
+        <h2>Results</h2>
+        <hr>
+        <p>
+            XXXXXXXXXXXX.
+        </p>
+
+        <select id="checkType" onchange="changeCheckType();">
+            <option value=0>01 spray bottle</option>
+            <option value=1>02 lotion bottle</option>
+            <option value=2>03 squeezable bottle</option>
+            <option value=3>c</option>
+        </select>
+        
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_00">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_01">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_02">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_03">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_10">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_11">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_12">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_13">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_20">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_21">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_22">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gt_ho_18-min.gif" style="width:95%" id="img_23">
+            </div>
+        </div>
+    </div>
+
+
+	<footer>
+        <p><span style="color: #AAAAAA">Contact Email: wei.wei2018@ia.ac.cn</span></p>
+    </footer>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
