@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="Learning Dexterous Functional Grasp for Anthropomorphic Robotic Hand from Human Demonstration">
+          content="Generalized Functional Tool-use Grasping with Minimal Demonstrations">
     <meta name="author" content="Wei Wei, Peng Wang, Yayu Huang, Sizhe Wang, HanNan Duan">
 
     <title>
-        Learning Dexterous Functional Grasp for Anthropomorphic Robotic Hand from Human Demonstration
+        Generalized Functional Tool-use Grasping with Minimal Demonstrations
     </title>
     <script type="text/javascript">
         function changeCheckType(){
             var categories = ['01_spray_bottle', '02_lotion_bottle', '03_squeezable_bottle', '04_key', '10_mug', '11_cup', '12_bowl', '13_teapot', '14_wineglass', '15_cylinder_bottle', '16_s_bottle', '17_can', '20_knife', '21_screwdriver', '22_hammer', '23_flashlight', '24_wrench', '25_toothbrush', '26_pan', '27_drill', '28_lightbulb', '29_pen', '35_scissors', '36_plier', '37_stapler', '40_eyeglass', '41_headphone', '42_binoculars', '43_gamecontroller', '50_camera', '51_mouse', '52_phone', '53_spoon', '54_spatula', '55_fork', '56_door_knob', '57_toothpaste', '58_clamp', '59_detergent_bottle']
+            var hands = ['shadow_hand', 'hit_dlr_hand']
             for (var i=0;i<3;i++)
             {
                 for (var j=0;j<4;j++)
@@ -23,7 +24,10 @@
                     var ct = document.getElementById("checkType");
                     var index = ct.selectedIndex;
                     var val = ct.options[index].value;
-                    my_img.src = "saved_gif/" + categories[val] + "/" + (i * 4 + j).toString() + ".gif"
+                    var ht = document.getElementById("handType")
+                    var hand_index = ht.selectedIndex;
+                    var hand_val = ht.options[hand_index].value
+                    my_img.src = "saved_gif/" + hands[hand_val] + "/" + categories[val] + "/" + (i * 4 + j).toString() + ".gif"
                 }
             }
             // var my_img = document.getElementById("my_gif");
@@ -32,6 +36,7 @@
             // var val = ct.options[index].value;
             // my_img.src = "saved_gif/" + categories[val] + "/0.gif"
         }
+
     </script>
     <!-- Bootstrap core CSS -->
     <!--link href="bootstrap.min.css" rel="stylesheet"-->
@@ -46,127 +51,292 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h2>Learning Dexterous Functional Grasp for Anthropomorphic Robotic Hand from Human Demonstration</h2>
+        <h2>Generalized Functional Tool-use Grasping with Minimal Demonstrations</h2>
         <hr>
         <p class="authors">
             <!-- <a href="https://.github.io/">Wei Wei</a>,&emsp; -->
             <a>Wei Wei</a>,&emsp;
-            <a>Peng Wang</a>
+            <a>Peng Wang*</a>,&emsp;
+            <a>Sizhe Wang</a>,&emsp;
+            <br>
+            <a>Wanyi Li</a>,&emsp;
+            <a>Yongkang Luo</a>,&emsp;
+            <a>Daheng Li</a>,&emsp;
+            <a>Yayu Huang</a>,&emsp;
+            <a>Haonan Duan</a>
         </p>
+    </div>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" style="background-color: #0793f0" href="https://arxiv.org/abs/2303.17808#">Paper</a>
+        <a class="btn btn-primary" style="background-color: #0793f0" href="">Dataset (Coming Soon)</a>
+        <!-- <a class="btn btn-primary" style="background-color: #4da9fa" href="./sources/slides.pdf">Slides</a> -->
     </div>
 </div>
 <br>
 <div class="container">
     <!-- Introduction -->
-    <div class="section" style="width:80%; margin:0px auto;">
+    <div class="section" style="width:100%; margin:0px auto;">
+        <div class="slim-container">
         <div class="row">
             <div class="col-sm-3">
-                <img src="saved_gif/01_spray_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/02_lotion_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/02_lotion_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/03_squeezable_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/03_squeezable_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/04_key/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/04_key/0.gif" style="width:95%">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <img src="saved_gif/10_mug/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/10_mug/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/11_cup/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/11_cup/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/12_bowl/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/12_bowl/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/13_teapot/0.gif" style="width:95%">
+                <img src="saved_gif/shadow_hand/13_teapot/0.gif" style="width:95%">
             </div>
         </div>
     </div>
+    </div>
+    <br><br>
+    <!-- Video -->
+    <div class="section" style="width:100%; margin:0px auto;">
+        <!-- <h2>Video</h2> -->
+        <div style="display: flex;">
+            <div style="width: 480px; display: block; vertical-align: middle;">
+                <div class="vcontainer" style='margin: auto;width: 440px;'>
+                    <!-- <iframe class='video' src="https://www.youtube.com/embed/_BXuJPdr5-g" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    <iframe src="https://player.bilibili.com/player.html?aid=824729288&bvid=BV1ag4y1M7L7&cid=1085664713&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="440px" height="330px"> </iframe>
+                    <!-- <iframe class='video' src="https://player.bilibili.com/player.html?aid=824729288&bvid=BV1ag4y1M7L7&cid=1085664713&page=1" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen width="320px" height="568px"></iframe> -->
+                </div>
+            </div>
+            <div style="width: 240px; display: block; ">
+                <div class="vcontainer" style='margin: auto;width: 200px;'>                    
+                    <iframe src="https://player.bilibili.com/player.html?aid=569692935&bvid=BV1yv4y1n7FS&cid=1085674016&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200px" height="150px"> </iframe>
+                </div>
+				<div style='height: 30px;'></div>
+                <div class="vcontainer" style='margin: auto;width: 200px;'>
+                    <iframe src="https://player.bilibili.com/player.html?aid=824719588&bvid=BV1zg4y1M7Ci&cid=1085675312&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200px" height="150px"> </iframe>
+                </div>
+            </div>
+            <div style="width: 240px; display: block;">
+                <div class="vcontainer" style='margin: auto;width: 200px;'>
+                    <!-- PFgqGbtqGYM   KtAdvooMP-A -->
+                    <!-- <iframe class='video' src="https://www.youtube.com/embed/PFgqGbtqGYM" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    <iframe src="https://player.bilibili.com/player.html?aid=269716688&bvid=BV1gc411s7Gt&cid=1085675816&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200px" height="150px"> </iframe>
+                </div>
+				<div style='height: 30px;'></div>
+                <div class="vcontainer" style='margin: auto; width: 200px;'>
+                    <!-- <iframe class='video' src="https://www.youtube.com/embed/JGgD-V1pUIM" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    <iframe src="https://player.bilibili.com/player.html?aid=994739507&bvid=BV1es4y1m7qG&cid=1085688324&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200px" height="150px"> </iframe>
+                </div>
+            </div>
+            <!--div>
+                <h5></h5>
+                <p>
+                    xxxxxxxxxxxx
+                </p>
+            </div-->
+        </div>
+    </div>
+    
     <br><br>
     <!--  -->
-    <div class="section" style="width:80%; margin:0px auto;">
+    <!-- <div class="section" style="width:100%; margin:0px auto;">
+        <h2></h2>
+        <hr>
+        <p>
+        </p>
+    </div>
+    <br><br> -->
+
+    <!-- pipeline -->
+    <div class="section" style="width:100%; margin:0px auto;">
+        <h2>Overview of the framework: DexFG</h2>
+        <hr>
+        <br>
+        <div style="align-content: center;">
+            <img src="./overall_pipeline_v2.png" style="width: 90%; margin-left: 5%; margin-right: 5%;">
+        </div>
+        <br>
     </div>
     <br><br>
+
     <!-- Idea -->
-    <div class="section" style="width:80%; margin:0px auto;">
-        <h2>Category Grasp Diffusion</h2>
+    <div class="section">
+        <h2>Functional Grasp Synthesis</h2>
         <hr>
         <p>
             Fistly, given a human grasp demonstration, we are able to get the affordance map on the object surface. Then we can map the affordance map from one object to similar objects through the dense correspondence.  Finally, we optimize the articulated hand model which minimizes the cost function of diffused affordance map (contact).
         </p>
-        <div class="row align-items-center">
-            <div class="col-sm-3 text-center">
-                <h4>Human Grasp</h4>
-            </div>
-            <div class="col-sm-3 text-center">
-                <h4>Affordance Map</h4>
-            </div>
-            <div class="col-sm-3 text-center">
-                <h4>Affordance Diffusion</h4>
-            </div>
-            <div class="col-sm-3 text-center">
-                <h4>Shadow Hand</h4>
-            </div>
-        </div>
+		<br>
+		<div style="display: inline-flex;">
+			<img src="./knuckle_level_contact.png" style="max-width: 45%; margin-left: 2.5%; margin-right: 2.5%; vertical-align: middle;">
+			<div style="max-width: 45%; margin-left: 2.5%; margin-right: 2.5%; vertical-align: middle;">
+		<div class="row align-items-center">
+			<div class="col-sm-3 text-center">
+				<h6>Human Grasp Demonstration</h6>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h6>Knuckle-level Contact Map</h6>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h6>Contact Diffusion</h6>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h6>Shadow Hand Grasp</h6>
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="col-sm-3">
+		<div class="row">
+			<div class="col-sm-3">
 
-            </div>
-            <div class="col-sm-3">
+			</div>
+			<div class="col-sm-3">
 
-            </div>
-            <div class="col-sm-3">
-                <img src="target_object_1.gif" style="width:95%">
-            </div>
-            <div class="col-sm-3">
-                <img src="target_object_1_grasp.gif" style="width:95%">
-            </div>
-        </div>
+			</div>
+			<div class="col-sm-3">
+				<img src="target_object_1.gif" style="width:95%">
+			</div>
+			<div class="col-sm-3">
+				<img src="target_object_1_grasp.gif" style="width:95%">
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="mano_grasp.gif" style="width:95%">
-            </div>
-            <div class="col-sm-3">
-                <img src="ref_object.gif" style="width:95%">
-            </div>
-            <div class="col-sm-3">
-                <img src="saved_gif/01_spray_bottle/0.gif" style="width:95%">
-            </div>
-            <div class="col-sm-3">
-                <img src="saved_gif/01_spray_bottle/0.gif" style="width:95%">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
+		<div class="row">
+			<div class="col-sm-3">
+				<img src="mano_grasp.gif" style="width:95%">
+			</div>
+			<div class="col-sm-3">
+				<img src="ref_object.gif" style="width:95%">
+			</div>
+			<div class="col-sm-3">
+				<img src="saved_gif/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
+			</div>
+			<div class="col-sm-3">
+				<img src="saved_gif/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
 
-            </div>
-            <div class="col-sm-3">
+			</div>
+			<div class="col-sm-3">
 
-            </div>
-            <div class="col-sm-3">
-                <img src="target_object_2.gif" style="width:95%">
-            </div>
-            <div class="col-sm-3">
-                <img src="target_object_2_grasp.gif" style="width:95%">
-            </div>
-        </div>
+			</div>
+			<div class="col-sm-3">
+				<img src="target_object_2.gif" style="width:95%">
+			</div>
+			<div class="col-sm-3">
+				<img src="target_object_2_grasp.gif" style="width:95%">
+			</div>
+		</div>
+	</div>
+	</div>
+	<p>
+		The six-step synthesis algorithm is summarized in following order:
+		<ol>
+			<li>Establish knuckle-level hand-object contact to associate fine-grained contact between hand segments and object surfaces, using both object and hand meshes.</li>
+			<li>Define auxiliary anchor points on the hand to align precise finger contacts with target objects.</li>
+			<li>Obtain the initial grasp configuration for grasp optimization through human-to-robot hand grasp mapping.</li>
+			<li>Obtain dense shape correspondence of category-level objects using a pretrained neural network for contact diffusion between objects of the same category.</li>
+			<li>Apply a gradient descent-based algorithm to optimize the initial grasp configuration based on fine-grained hand-object contact objective functions.</li>
+			<li>Refine the grasps in simulator to avoid both inter-penetration and self-penetration.</li>
+		</ol>
+	</p>
 
     </div>
     <br><br>
-    <!--  -->
-    <div class="section" style="width:80%; margin:0px auto;">
-        <h2>Results of Category Grasp Diffusion</h2>
+
+    <!-- Grasp Generation -->
+    <div class="section" style="width:100%; margin:0px auto;">
+        <h2>Grasp Generation</h2>
+        <hr>
+		<!-- Shape Completion -->
+		<h3>Object Reconstruction</h3>
+        <div style="display: inline-flex;">
+            <img src="./object_reconstruction_pipeline.png" style="max-width: 45%; margin-left: 2.5%; margin-right: 2.5%; vertical-align: middle;">
+            <img src="./shape_completion_simulation.png" style="max-width: 45%; margin-left: 2.5%; margin-right: 2.5%; vertical-align: middle;">
+        </div>
+        <!--p>
+            xxxxxxxxxxxx
+        </p-->
+		<br>
+		<!-- Variational Grasp Sampler -->
+		<h3>Variational Grasp Sampler</h2>
+        <div class="slim-container">
+            <!--h3 style="text-align: center;">Conditional-VAE Based Generative Model</h3-->
+            <img src="./variational_grasp_sampler_v2.jpeg" style="max-width: 85%; margin-left: 7.5%; margin-right: 7.5%; margin-top: 20px; margin-bottom: 20px;">
+            <h4 style="text-align: center;">Data Augmentation</h4>
+            <img src="./data_augmentation.png" style="max-width: 85%; margin-left: 7.5%; margin-right: 7.5%; margin-top: 20px; margin-bottom: 20px;">
+        </div>
+        <!--p>
+            xxxxxxxxxxxx
+        </p-->
+		<br>
+		<!-- Iterative Grasp RefineNet -->
+		<h3>Iterative Grasp RefineNet</h3>
+        <div class="slim-container">
+            <!--h3 style="text-align: center;">Contact Field Based Grasp Refinement</h3-->
+            <img src="./refinenet.png" style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 20px; margin-bottom: 20px;">
+        </div>
+        <!--p>
+            xxxxxxxxxxxx
+        </p-->
+    </div>
+    <br><br>
+
+    <!-- Results -->
+    <div class="section" style="width:100%; margin:0px auto;">
+        <h2>Results</h2>
+        <hr>
+		<h3>Comparison with Baselines</h3>
+		<div class="slim-container">
+            <img src="./grasp_planner_vs.png" style="width: 100%;">
+        </div>
+        <!--p>xxxxxxxxxxxx</p-->
+        <br>
+		
+		<h3>Grasp Synthesis for Kinematically Diverse Robot Hands</h3>
+        <div class="slim-container">
+            <img src="./six_hand_grasp.png" style="width: 100%;">
+        </div>
+		<!--p>
+            xxxxxxxxxxxx
+        </p-->
+        <br>
+
+		<h3>Real Robot Grasp Execution</h3>
+		<div class="slim-container">
+            <img src="./real_grasps.png" style="width: 100%;">
+        </div>
+        <!--p>xxxxxxxxxxxx</p-->
+    </div>
+	<br><br>
+
+    <!-- Grasps -->
+    <div class="section" style="width:100%; margin:0px auto;">
+        <h2>Visualization of Our Functional Tool-use Grasp Dataset</h2>
         <hr>
         <p>
-            Here we show the generated grasps (shadow hand) based on the method we proposed: Category Grasp Diffusion. Note that no futher manually refinement are applied to these results, Some failure cases are also shown.
+            Here we show the generated grasps on various object categories (only shadow hand are supported now) based on the grasp synthesis algorithm we proposed. Note that no futher refinement in simulator is applied to these grasps, some failure cases are also shown here.
         </p>
         <br>
         <div style="text-align: center">
@@ -211,57 +381,87 @@
                 <option value=37>58 clamp</option>
                 <option value=38>59 detergent bottle</option>
             </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="handType" onchange="changeCheckType();">
+                <option value=0>Shadow Hand</option>
+                <option value=1>HIT-DLR Hand</option>
+                <option value=2>Schunk Hand</option>
+                <option value=3>Allegro Hand</option>
+                <option value=4>Barrelt Hand</option>
+                <option value=5>Parallel Gripper</option>
+
+            </select>
         </div>
         <br>
+        <div class="slim-container">
         <div class="row" >
             <div class="col-sm-3" style="padding: 10px 5px";>
-                <img src="saved_gif/01_spray_bottle/0.gif" style="width:95%" id="img_00">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/0.gif" style="width:95%" id="img_00">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/1.gif" style="width:95%" id="img_01">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/1.gif" style="width:95%" id="img_01">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/2.gif" style="width:95%" id="img_02">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/2.gif" style="width:95%" id="img_02">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/3.gif" style="width:95%" id="img_03">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/4.gif" style="width:95%" id="img_10">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/5.gif" style="width:95%" id="img_11">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/6.gif" style="width:95%" id="img_12">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/7.gif" style="width:95%" id="img_13">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/3.gif" style="width:95%" id="img_03">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/8.gif" style="width:95%" id="img_20">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/4.gif" style="width:95%" id="img_10">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/9.gif" style="width:95%" id="img_21">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/5.gif" style="width:95%" id="img_11">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/10.gif" style="width:95%" id="img_22">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/6.gif" style="width:95%" id="img_12">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/01_spray_bottle/11.gif" style="width:95%" id="img_23">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/7.gif" style="width:95%" id="img_13">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/8.gif" style="width:95%" id="img_20">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/9.gif" style="width:95%" id="img_21">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/10.gif" style="width:95%" id="img_22">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/shadow_hand/01_spray_bottle/11.gif" style="width:95%" id="img_23">
             </div>
         </div>
     </div>
+    </div>
     <br><br>
+
+    <!-- BibTex -->
+    <div class="section">
+        <h2>BibTeX</h2>
+        <hr>
+        <div class="bibtexsection" style="width: 100%;">
+            <!-- <p style="width: 100%;"> -->
+    @article{wei2023generalized,
+        title={Generalized Anthropomorphic Functional Grasping with Minimal Demonstrations}, 
+        author={Wei, Wei and Wang, Peng and Wang, Sizhe and Li, Wanyi and 
+                Luo, Yongkang and Li, Daheng and Huang, Yayu and Duan, Haonan},
+        journal={arXiv preprint arXiv:2303.17808}
+        year={2023},
+    }
+            <!-- </p> -->
+        </div>
+    </div>
+    <br><br>
+
     <footer>
         <p style="text-align: center"><span style="color: #AAAAAA">Contact Email: wei.wei2018@ia.ac.cn</span></p>
     </footer>
 
 </div>
-
 </body>
 </html>
