@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="Generalized Functional Tool-use Grasping with Minimal Demonstrations">
+          content="Learning Human-like Functional Grasping for Multi-finger Hands with Minimal Demonstrations">
     <meta name="author" content="Wei Wei, Peng Wang, Yayu Huang, Sizhe Wang, HanNan Duan">
 
     <title>
-        Generalized Functional Tool-use Grasping for Multi-finger Hands with Minimal Demonstrations
+        Learning Human-like Functional Grasping for Multi-finger Hands with Minimal Demonstrations
     </title>
     <script type="text/javascript">
         function changeCheckType(){
@@ -59,7 +59,7 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h2>Generalized Functional Tool-use Grasping with Minimal Demonstrations</h2>
+        <h2> Learning Human-like Functional Grasping for Multi-finger Hands with Minimal Demonstrations </h2>
         <hr>
         <p class="authors">
             <!-- <a href="https://.github.io/">Wei Wei</a>,&emsp; -->
@@ -156,6 +156,8 @@
                     <iframe src="https://player.bilibili.com/player.html?aid=994739507&bvid=BV1es4y1m7qG&cid=1085688324&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="200px" height="150px"> </iframe>
                 </div>
             </div>
+            <br>
+            
             <!--div>
                 <h5></h5>
                 <p>
@@ -163,8 +165,35 @@
                 </p>
             </div-->
         </div>
+        <div style='height: 30px;'></div>
+
+        <div style="display: flex;">
+            <div style="width: 480px; display: block; vertical-align: middle;">
+                <div class="vcontainer" style='margin: auto;width: 440px;'>
+                    <!-- <iframe class='video' src="https://www.youtube.com/embed/_BXuJPdr5-g" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    <iframe src="https://player.bilibili.com/player.html?aid=697987121&bvid=BV1Nm4y117Fp&cid=1108857896&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="440px" height="330px"> </iframe>
+                    <!-- <iframe class='video' src="https://player.bilibili.com/player.html?aid=824729288&bvid=BV1ag4y1M7L7&cid=1085664713&page=1" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen width="320px" height="568px"></iframe> -->
+                </div>
+            </div>
+            <div style="width: 480px; display: block; vertical-align: middle;">
+                <div class="vcontainer" style='margin: auto;width: 440px;'>
+                    <!-- <iframe class='video' src="https://www.youtube.com/embed/_BXuJPdr5-g" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    <iframe src="https://player.bilibili.com/player.html?aid=995436257&bvid=BV1Ss4y197bv&cid=1108860974&page=1" scrolling="no" frameborder="0" frameborder="no" framespacing="0" allowfullscreen="true" width="440px" height="330px"> </iframe>
+                    <!-- <iframe class='video' src="https://player.bilibili.com/player.html?aid=824729288&bvid=BV1ag4y1M7L7&cid=1085664713&page=1" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen width="320px" height="568px"></iframe> -->
+                </div>
+            </div>
+        </div>
     </div>
     
+
     <br><br>
 
        <!-- Grasps -->
@@ -176,65 +205,78 @@
         </p>
         <br>
         <div style="text-align: center">
-            <select id="checkType" onchange="changeCheckType();">
-                <option value=0>01 spray bottle</option>
-                <option value=1>02 lotion bottle</option>
-                <option value=2>03 squeezable bottle</option>
-                <option value=3>04 key</option>
-                <option value=4>10 mug</option>
-                <option value=5>11 cup</option>
-                <option value=6>12 bowl</option>
-                <option value=7>13 teapot</option>
-                <option value=8>14 wineglass</option>
-                <option value=9>15 cylinder_bottle</option>
-                <option value=10>16 s bottle</option>
-                <option value=11>17 can</option>
-                <option value=12>20 knife</option>
-                <option value=13>21 screwdriver</option>
-                <option value=14>22 hammer</option>
-                <option value=15>23 flashlight</option>
-                <option value=16>24 wrench</option>
-                <option value=17>25 toothbrush</option>
-                <option value=18>26 pan</option>
-                <option value=19>27 drill</option>
-                <option value=20>28 lightbulb</option>
-                <option value=21>29 pen</option>
-                <option value=22>35 scissors</option>
-                <option value=23>36 plier</option>
-                <option value=24>37 stapler</option>
-                <option value=25>40 eyeglass</option>
-                <option value=26>41 headphone</option>
-                <option value=27>42 binoculars</option>
-                <option value=28>43 gamecontroller</option>
-                <option value=29>50 camera</option>
-                <option value=30>51 mouse</option>
-                <option value=31>52 phone</option>
-                <option value=32>53 spoon</option>
-                <option value=33>54 spatula</option>
-                <option value=34>55 fork</option>
-                <option value=35>56 door_knob</option>
-                <option value=36>57 toothpaste</option>
-                <option value=37>58 clamp</option>
-                <option value=38>59 detergent bottle</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <select id="handType" onchange="changeCheckType();">
-                <option value=0>Shadow Hand</option>
-                <option value=1>HIT-DLR Hand</option>
-                <option value=2>Schunk Hand</option>
-                <option value=3>Allegro Hand</option>
-                <option value=4>Barrelt Hand</option>
-                <option value=5>Parallel Gripper</option>
-
-            </select>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <select id="functionType" onchange="changeCheckType();">
-                <option value=0>Tool-Use</option>
-                <option value=1>Handover</option>
-                <option value=2>Pick Up</option>
-
-            </select>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Hand</th>
+                    <th>Intention Type</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="checkType" onchange="changeCheckType();">
+                            <option value=0>01 spray bottle</option>
+                            <option value=1>02 lotion bottle</option>
+                            <option value=2>03 squeezable bottle</option>
+                            <option value=3>04 key</option>
+                            <option value=4>10 mug</option>
+                            <option value=5>11 cup</option>
+                            <option value=6>12 bowl</option>
+                            <option value=7>13 teapot</option>
+                            <option value=8>14 wineglass</option>
+                            <option value=9>15 cylinder_bottle</option>
+                            <option value=10>16 s bottle</option>
+                            <option value=11>17 can</option>
+                            <option value=12>20 knife</option>
+                            <option value=13>21 screwdriver</option>
+                            <option value=14>22 hammer</option>
+                            <option value=15>23 flashlight</option>
+                            <option value=16>24 wrench</option>
+                            <option value=17>25 toothbrush</option>
+                            <option value=18>26 pan</option>
+                            <option value=19>27 drill</option>
+                            <option value=20>28 lightbulb</option>
+                            <option value=21>29 pen</option>
+                            <option value=22>35 scissors</option>
+                            <option value=23>36 plier</option>
+                            <option value=24>37 stapler</option>
+                            <option value=25>40 eyeglass</option>
+                            <option value=26>41 headphone</option>
+                            <option value=27>42 binoculars</option>
+                            <option value=28>43 gamecontroller</option>
+                            <option value=29>50 camera</option>
+                            <option value=30>51 mouse</option>
+                            <option value=31>52 phone</option>
+                            <option value=32>53 spoon</option>
+                            <option value=33>54 spatula</option>
+                            <option value=34>55 fork</option>
+                            <option value=35>56 door_knob</option>
+                            <option value=36>57 toothpaste</option>
+                            <option value=37>58 clamp</option>
+<!--                            <option value=38>59 detergent bottle</option>-->
+                        </select>
+                    </td>
+                    <td>
+                        <select id="handType" onchange="changeCheckType();">
+                            <option value=0>Shadow Hand</option>
+                            <option value=1>HIT-DLR Hand</option>
+                            <option value=2>Schunk Hand</option>
+                            <option value=3>Allegro Hand</option>
+                            <option value=4>Barrelt Hand</option>
+                            <option value=5>Parallel Gripper</option>
+            
+                        </select>
+                    </td>
+                    <td>
+                        <select id="functionType" onchange="changeCheckType();">
+                            <option value=0>Tool-Use</option>
+                            <option value=1>Handover</option>
+                            <option value=2>Pick Up</option>
+            
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            
         </div>
         <br>
         <div class="slim-container">
@@ -336,7 +378,7 @@
 
 			</div>
 			<div class="col-sm-3">
-
+                ••••••••••••
 			</div>
 			<div class="col-sm-3">
 				<img src="target_object_1.gif" style="width:95%">
@@ -406,7 +448,7 @@
         </p-->
 		<br>
 		<!-- Variational Grasp Sampler -->
-		<h3>Variational Grasp Sampler</h2>
+		<h3>Intention-conditioned Grasp Sampler</h3>
         <div class="slim-container">
             <!--h3 style="text-align: center;">Conditional-VAE Based Generative Model</h3-->
             <img src="./variational_grasp_sampler_v3.png" style="max-width: 85%; margin-left: 7.5%; margin-right: 7.5%; margin-top: 20px; margin-bottom: 20px;">
@@ -433,12 +475,7 @@
     <div class="section" style="width:100%; margin:0px auto;">
         <h2>Results</h2>
         <hr>
-		<h3>Comparison with Baselines</h3>
-        <img src="./grasp_planner_vs_all.png" style="width: 100%;">
-        <!--p>xxxxxxxxxxxx</p-->
-        <br>
-        <br>
-		
+
         <div class="section">
 		<h3>Grasp Synthesis for Kinematically Diverse Robot Hands</h3>
             <img src="./six_hand_grasp_all.png" style="width: 100%;">
@@ -449,12 +486,21 @@
         <br>
 
         <div class="section">
-		<h3>Real Robot Grasp Execution</h3>
-		<div class="slimer-container">
-            <img src="./real_functional_grasps.png" style="width: 100%;">
+            <h3>Comparison with Baselines</h3>
+            <img src="./grasp_planner_vs_all.png" style="width: 100%;">
+            <!--p>xxxxxxxxxxxx</p-->
+
         </div>
-        <!--p>xxxxxxxxxxxx</p-->
-    </div>
+		 <br>
+
+
+        <div class="section">
+		    <h3>Real Robot Grasp Execution</h3>
+            <div class="slim-container">
+                <img src="./real_functional_grasps.png" style="width: 100%;">
+            </div>
+            <!--p>xxxxxxxxxxxx</p-->
+        </div>
     </div>  
 	<br><br>
 
@@ -465,15 +511,42 @@
         <h2>BibTeX</h2>
         <hr>
         <div class="bibtexsection" style="width: 100%;">
-            <!-- <p style="width: 100%;"> -->
-    @article{wei2023generalized,
-        title={Generalized Anthropomorphic Functional Grasping with Minimal Demonstrations}, 
-        author={Wei, Wei and Wang, Peng and Wang, Sizhe and Li, Wanyi and 
-                Luo, Yongkang and Li, Daheng and Huang, Yayu and Duan, Haonan},
-        journal={arXiv preprint arXiv:2303.17808}
-        year={2023},
-    }
-            <!-- </p> -->
+@article{wei2023generalized,
+    title={Generalized Anthropomorphic Functional Grasping with Minimal Demonstrations},
+    author={Wei, Wei and Wang, Peng and Wang, Sizhe and Li, Wanyi and
+              Luo, Yongkang and Li, Daheng and Huang, Yayu and Duan, Haonan},
+    journal={arXiv preprint arXiv:2303.17808}
+    year={2023},
+}
+        </div>
+        <p>If you use our object dataset in your research, please cite the following papers:</p>
+        <div class="bibtexsection" style="width: 100%;">
+@article{chang2015shapenet,
+  title={Shapenet: An information-rich 3d model repository},
+  author={Chang, Angel X and Funkhouser, Thomas and Guibas, Leonidas and Hanrahan, Pat and Huang, Qixing and
+            Li, Zimo and Savarese, Silvio and Savva, Manolis and Song, Shuran and Su, Hao and others},
+  journal={arXiv preprint arXiv:1512.03012},
+  year={2015}
+}
+        </div>
+        <div class="bibtexsection" style="width: 100%;">
+@article{ycb,
+  title={The ycb object and model set: Towards common benchmarks for manipulation research},
+  author={Calli, Berk and Walsman, Aaron and Singh, Arjun and Srinivasa, Siddhartha and Abbeel, Pieter and
+            Dollar, Aaron M},
+  journal={IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2015}
+}
+        </div>
+        <div class="bibtexsection" style="width: 100%;">
+@inproceedings{yang2022oakink,
+  title={OakInk: A Large-scale Knowledge Repository for Understanding Hand-Object Interaction},
+  author={Yang, Lixin and Li, Kailin and Zhan, Xinyu and Wu, Fei and Xu, Anran and
+            Liu, Liu and Lu, Cewu},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={20953--20962},
+  year={2022}
+}
         </div>
     </div>
     <br><br>
