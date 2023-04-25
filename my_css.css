@@ -31,6 +31,11 @@
   margin-left: 100px;
   margin-right: 100px;
 }
+.slimer-container {
+  max-width: 600px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
  p {
    font-size: 16px;
    /*padding-bottom: 20px;*/
