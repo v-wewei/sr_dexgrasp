@@ -16,7 +16,7 @@
         function changeCheckType(){
             var categories = ['01_spray_bottle', '02_lotion_bottle', '03_squeezable_bottle', '04_key', '10_mug', '11_cup', '12_bowl', '13_teapot', '14_wineglass', '15_cylinder_bottle', '16_s_bottle', '17_can', '20_knife', '21_screwdriver', '22_hammer', '23_flashlight', '24_wrench', '25_toothbrush', '26_pan', '27_drill', '28_lightbulb', '29_pen', '35_scissors', '36_plier', '37_stapler', '40_eyeglass', '41_headphone', '42_binoculars', '43_gamecontroller', '50_camera', '51_mouse', '52_phone', '53_spoon', '54_spatula', '55_fork', '56_door_knob', '57_toothpaste', '58_clamp', '59_detergent_bottle']
             var hands = ['shadow_hand', 'hit_dlr_hand']
-            var functions = ['tooluse',  'handover', 'pickup']
+            var functions = ['TU', 'HO', 'PU']
             for (var i=0;i<3;i++)
             {
                 for (var j=0;j<4;j++)
@@ -87,30 +87,30 @@
         <div class="slim-container">
         <div class="row">
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/02_lotion_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/02_lotion_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/03_squeezable_bottle/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/03_squeezable_bottle/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/04_key/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/04_key/0.gif" style="width:95%">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/10_mug/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/10_mug/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/11_cup/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/11_cup/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/12_bowl/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/12_bowl/0.gif" style="width:95%">
             </div>
             <div class="col-sm-3">
-                <img src="saved_gif/tooluse/shadow_hand/13_teapot/0.gif" style="width:95%">
+                <img src="saved_gif/TU/shadow_hand/13_teapot/0.gif" style="width:95%">
             </div>
         </div>
     </div>
@@ -198,14 +198,15 @@
 
        <!-- Grasps -->
        <div class="section" style="width:100%; margin:0px auto;">
-        <h2>Visualization of Our Functional Tool-use Grasp Dataset</h2>
+        <h2>Visualization of Our Functional Grasp Dataset</h2>
         <hr>
         <p>
-            Here we show the generated grasps on various object categories (only shadow hand are supported now) based on the grasp synthesis algorithm we proposed. Note that no futher refinement in simulator is applied to these grasps, some failure cases are also shown here.
+            Here we show the generated functional grasps (Tool-use, Robot-to-Human Handover and Pickup) on various object categories (only shadow hand are supported now) based on the grasp synthesis algorithm we proposed. Due to space limitation, only 28 categories in our object dataset are shown here. Note that no further refinement in simulator is applied to these grasps, some failure cases are also shown here.
         </p>
         <br>
+           <p>* Expected to be completed by May 5th</p>
         <div style="text-align: center">
-            <table>
+            <table style="width: 50%;padding-left: 25%;padding-right: 25%;margin-left:auto;margin-right:auto">
                 <tr>
                     <th>Category</th>
                     <th>Hand</th>
@@ -216,16 +217,16 @@
                         <select id="checkType" onchange="changeCheckType();">
                             <option value=0>01 spray bottle</option>
                             <option value=1>02 lotion bottle</option>
-                            <option value=2>03 squeezable bottle</option>
+<!--                            <option value=2>03 squeezable bottle</option>-->
                             <option value=3>04 key</option>
                             <option value=4>10 mug</option>
-                            <option value=5>11 cup</option>
-                            <option value=6>12 bowl</option>
-                            <option value=7>13 teapot</option>
+<!--                            <option value=5>11 cup</option>-->
+<!--                            <option value=6>12 bowl</option>-->
+<!--                            <option value=7>13 teapot</option>-->
                             <option value=8>14 wineglass</option>
                             <option value=9>15 cylinder_bottle</option>
-                            <option value=10>16 s bottle</option>
-                            <option value=11>17 can</option>
+<!--                            <option value=10>16 s bottle</option>-->
+<!--                            <option value=11>17 can</option>-->
                             <option value=12>20 knife</option>
                             <option value=13>21 screwdriver</option>
                             <option value=14>22 hammer</option>
@@ -234,7 +235,7 @@
                             <option value=17>25 toothbrush</option>
                             <option value=18>26 pan</option>
                             <option value=19>27 drill</option>
-                            <option value=20>28 lightbulb</option>
+<!--                            <option value=20>28 lightbulb</option>-->
                             <option value=21>29 pen</option>
                             <option value=22>35 scissors</option>
                             <option value=23>36 plier</option>
@@ -248,10 +249,10 @@
                             <option value=31>52 phone</option>
                             <option value=32>53 spoon</option>
                             <option value=33>54 spatula</option>
-                            <option value=34>55 fork</option>
-                            <option value=35>56 door_knob</option>
+<!--                            <option value=34>55 fork</option>-->
+<!--                            <option value=35>56 door_knob</option>-->
                             <option value=36>57 toothpaste</option>
-                            <option value=37>58 clamp</option>
+<!--                            <option value=37>58 clamp</option>-->
 <!--                            <option value=38>59 detergent bottle</option>-->
                         </select>
                     </td>
@@ -262,8 +263,7 @@
                             <option value=2>Schunk Hand</option>
                             <option value=3>Allegro Hand</option>
                             <option value=4>Barrelt Hand</option>
-                            <option value=5>Parallel Gripper</option>
-            
+<!--                            <option value=5>Parallel Gripper</option>-->
                         </select>
                     </td>
                     <td>
@@ -282,44 +282,44 @@
         <div class="slim-container">
         <div class="row" >
             <div class="col-sm-3" style="padding: 10px 5px";>
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/0.gif" style="width:95%" id="img_00">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/0.gif" style="width:95%" id="img_00">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/1.gif" style="width:95%" id="img_01">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/1.gif" style="width:95%" id="img_01">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/2.gif" style="width:95%" id="img_02">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/2.gif" style="width:95%" id="img_02">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/3.gif" style="width:95%" id="img_03">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/4.gif" style="width:95%" id="img_10">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/5.gif" style="width:95%" id="img_11">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/6.gif" style="width:95%" id="img_12">
-            </div>
-            <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/7.gif" style="width:95%" id="img_13">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/3.gif" style="width:95%" id="img_03">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/8.gif" style="width:95%" id="img_20">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/4.gif" style="width:95%" id="img_10">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/9.gif" style="width:95%" id="img_21">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/5.gif" style="width:95%" id="img_11">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/10.gif" style="width:95%" id="img_22">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/6.gif" style="width:95%" id="img_12">
             </div>
             <div class="col-sm-3" style="padding: 10px 5px">
-                <img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/11.gif" style="width:95%" id="img_23">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/7.gif" style="width:95%" id="img_13">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/8.gif" style="width:95%" id="img_20">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/9.gif" style="width:95%" id="img_21">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/10.gif" style="width:95%" id="img_22">
+            </div>
+            <div class="col-sm-3" style="padding: 10px 5px">
+                <img src="saved_gif/TU/shadow_hand/01_spray_bottle/11.gif" style="width:95%" id="img_23">
             </div>
         </div>
     </div>
@@ -396,10 +396,10 @@
 				<img src="ref_object.gif" style="width:95%">
 			</div>
 			<div class="col-sm-3">
-				<img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
+				<img src="saved_gif/TU/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
 			</div>
 			<div class="col-sm-3">
-				<img src="saved_gif/tooluse/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
+				<img src="saved_gif/TU/shadow_hand/01_spray_bottle/0.gif" style="width:95%">
 			</div>
 		</div>
 		<div class="row">
